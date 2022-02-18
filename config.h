@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "JetBrains Mono:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -95,22 +95,41 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-		  "#282c34", /* 0: black */
-		    "#e06c75", /* 1: red */
-		      "#98c379", /* 2: green */
-		        "#d19a66", /* 3: yellow */
-			  "#61afef", /* 4: blue */
-			    "#c678dd", /* 5: magenta */
-			      "#56b6c2", /* 6: cyan */
-			        "#abb2bf", /* 7: white */
-				  "#5c6370", /* 8: brblack */
-				    "#e06c75", /* 9: brred */
-				      "#98c379", /* 10: brgreen */
-				        "#d19a66", /* 11: bryellow */
-					  "#61afef", /* 12: brblue */
-					    "#c678dd", /* 13: brmagenta */
-					      "#56b6c2", /* 14: brcyan */
+/*		  "#282c34", * 0: black 
+		    "#e06c75", /* 1: red 
+		      "#98c379", /* 2: green 
+		        "#d19a66", /* 3: yellow 
+			  "#61afef", /* 4: blue 
+			    "#c678dd", /* 5: magenta 
+			      "#56b6c2", /* 6: cyan 
+			        "#abb2bf", /* 7: white /
+				  "#5c6370", /* 8: brblack/
+				    "#e06c75", /* 9: brred /
+				      "#98c379", /* 10: brgreen *
+				        "#d19a66", /* 11: bryellow /
+					  "#61afef", /* 12: brblue *
+					    "#c678dd", /* 13: brmagenta *
+					      "#56b6c2", /* 14: brcyan *
 					        "#ffffff", /* 15: brwhite */
+    "#3b4252", /* black   */
+	"#bf616a", /* red     */
+	"#a3be8c", /* green   */
+	"#ebcb8b", /* yellow  */
+	"#81a1c1", /* blue    */
+	"#b48ead", /* magenta */
+	"#88c0d0", /* cyan    */
+	"#e5e9f0", /* white   */
+	"#4c566a", /* black   */
+	"#bf616a", /* red     */
+	"#a3be8c", /* green   */
+	"#ebcb8b", /* yellow  */
+	"#81a1c1", /* blue    */
+	"#b48ead", /* magenta */
+	"#8fbcbb", /* cyan    */
+	"#eceff4", /* white   */
+    [255] = 0,
+    "#2e3440",
+    "#d8dee9",
 };
 
 
@@ -118,10 +137,17 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+
+/*unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 7;
 static unsigned int defaultrcs = 0;
+*/
+
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
